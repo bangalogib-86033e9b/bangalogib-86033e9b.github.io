@@ -1,0 +1,2283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的世界珍妮原版动画完整版 - 内容聚合与观看指南</title>
+  <meta name="description" content="我的世界珍妮原版动画完整版聚合页，提供珍妮系列动画的完整剧集列表、角色档案、幕后花絮、观看顺序推荐及社区讨论。适合Minecraft动画爱好者与珍妮系列粉丝查阅。">
+  <meta name="keywords" content="我的世界珍妮原版动画完整版">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%233b6e3b'/%3E%3Ccircle cx='16' cy='13' r='6' fill='%23f5d742'/%3E%3Crect x='8' y='21' width='16' height='5' rx='2' fill='%23e0e0e0'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --primary: #2e6b3e;
+      --primary-light: #e3f0e3;
+      --primary-dark: #1c4a28;
+      --accent: #d9a441;
+      --accent-light: #fdf3e0;
+      --bg-page: #f6f8f4;
+      --bg-card: #ffffff;
+      --bg-panel: #f0f4ed;
+      --text-primary: #1d2b1d;
+      --text-secondary: #4a5a4a;
+      --text-muted: #7a8a7a;
+      --border-color: #d9e2d6;
+      --divider-color: #e4ebe1;
+      --radius-card: 16px;
+      --radius-btn: 10px;
+      --radius-tag: 20px;
+      --shadow-card: 0 2px 8px rgba(30, 50, 30, 0.06);
+      --shadow-hover: 0 6px 20px rgba(30, 50, 30, 0.10);
+      --announce-h: 38px;
+      --header-h: 60px;
+      --sticky-offset: calc(var(--announce-h) + var(--header-h));
+      --font-sans: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--sticky-offset);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    /* 吸顶公告条 */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--announce-h);
+      background: var(--primary-dark);
+      color: #e8f0e4;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      font-size: 13px;
+      padding: 0 20px;
+      gap: 12px;
+    }
+
+    .announce-brand {
+      font-weight: 600;
+      color: var(--accent);
+      white-space: nowrap;
+      font-size: 13px;
+    }
+
+    .announce-items {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      white-space: nowrap;
+    }
+
+    .announce-items::-webkit-scrollbar {
+      display: none;
+    }
+
+    .announce-items span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .announce-items .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .announce-date {
+      color: #b8d4b0;
+      font-size: 12px;
+    }
+
+    /* 吸顶页头 */
+    .site-header {
+      position: sticky;
+      top: var(--announce-h);
+      z-index: 99;
+      height: var(--header-h);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 16px;
+    }
+
+    .header-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .logo-svg {
+      width: 34px;
+      height: 34px;
+    }
+
+    .brand-text {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--primary-dark);
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+      max-width: 180px;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      flex: 1;
+    }
+
+    .header-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .header-nav a {
+      padding: 6px 12px;
+      border-radius: var(--radius-btn);
+      font-size: 13px;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .header-nav a:hover,
+    .header-nav a:focus-visible {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      text-decoration: none;
+    }
+
+    .header-nav a:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    .header-search {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      position: relative;
+    }
+
+    .header-search input {
+      width: 150px;
+      height: 34px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-btn);
+      padding: 0 12px;
+      font-size: 13px;
+      background: var(--bg-page);
+      color: var(--text-primary);
+      transition: border-color 0.2s, width 0.2s;
+    }
+
+    .header-search input:focus {
+      outline: none;
+      border-color: var(--primary);
+      width: 190px;
+    }
+
+    .header-search button {
+      height: 34px;
+      padding: 0 12px;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius-btn);
+      font-size: 13px;
+      transition: background 0.2s;
+    }
+
+    .header-search button:hover {
+      background: var(--primary-dark);
+    }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-btn);
+      color: var(--primary-dark);
+      font-size: 22px;
+    }
+
+    .hamburger:focus-visible {
+      outline: 2px solid var(--primary);
+    }
+
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+      z-index: 200;
+    }
+
+    .mobile-overlay.active {
+      display: block;
+    }
+
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 280px;
+      max-width: 80vw;
+      height: 100vh;
+      background: var(--bg-card);
+      z-index: 201;
+      padding: 24px 20px;
+      box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+      overflow-y: auto;
+      transform: translateX(-100%);
+      transition: transform 0.25s ease;
+    }
+
+    .mobile-drawer.active {
+      display: block;
+      transform: translateX(0);
+    }
+
+    .mobile-drawer .close-btn {
+      background: none;
+      border: none;
+      font-size: 26px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      display: block;
+      width: 100%;
+      text-align: right;
+    }
+
+    .mobile-drawer nav {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mobile-drawer nav a {
+      padding: 10px 12px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      color: var(--text-primary);
+    }
+
+    .mobile-drawer nav a:hover {
+      background: var(--primary-light);
+      text-decoration: none;
+    }
+
+    /* 首屏 */
+    .hero-section {
+      background: linear-gradient(135deg, #1c3a22 0%, #2e6b3e 45%, #4a8a5a 100%);
+      color: #fff;
+      padding: 48px 20px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: clamp(26px, 3.4vw, 42px);
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+
+    .hero-desc {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #d4e8d0;
+      max-width: 620px;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-actions a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 22px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .hero-actions a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #2b1e00;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .btn-outline:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.3));
+    }
+
+    /* 主容器 */
+    .main-container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+      display: grid;
+      grid-template-columns: 170px 1fr 250px;
+      gap: 28px;
+      align-items: start;
+    }
+
+    /* 左频道栏 */
+    .left-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 20px);
+      max-height: calc(100vh - var(--sticky-offset) - 40px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+
+    .channel-nav {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 16px 12px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--border-color);
+    }
+
+    .channel-nav h2 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      padding-left: 8px;
+      font-weight: 600;
+    }
+
+    .channel-nav a {
+      display: block;
+      padding: 7px 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: background 0.2s, color 0.2s;
+      border-left: 3px solid transparent;
+    }
+
+    .channel-nav a:hover,
+    .channel-nav a.active {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      text-decoration: none;
+      border-left-color: var(--primary);
+    }
+
+    .channel-nav a:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 1px;
+    }
+
+    /* 主内容区 */
+    .content-area {
+      min-width: 0;
+    }
+
+    .content-section {
+      margin-bottom: 40px;
+      scroll-margin-top: calc(var(--sticky-offset) + 16px);
+    }
+
+    .content-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .section-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: 0.3px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-header h2 .accent-dot {
+      width: 6px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 3px;
+      display: inline-block;
+    }
+
+    .section-header .more-link {
+      font-size: 13px;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+
+    /* 概览 */
+    .overview-text {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 22px 24px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-card);
+      font-size: 14.5px;
+      line-height: 1.85;
+      color: var(--text-secondary);
+    }
+
+    .overview-text p {
+      margin-bottom: 12px;
+    }
+
+    .overview-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      background: var(--bg-panel);
+    }
+
+    .card-body {
+      padding: 12px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+
+    .card-type {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 2px 10px;
+      border-radius: var(--radius-tag);
+      align-self: flex-start;
+      letter-spacing: 0.3px;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    .card-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .card-tags span {
+      font-size: 11px;
+      color: var(--text-secondary);
+      background: var(--bg-panel);
+      padding: 2px 8px;
+      border-radius: var(--radius-tag);
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .hot-score {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* 更新列表 */
+    .update-list {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+
+    .update-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 12px 18px;
+      border-bottom: 1px solid var(--divider-color);
+      transition: background 0.2s;
+    }
+
+    .update-item:last-child {
+      border-bottom: none;
+    }
+
+    .update-item:hover {
+      background: var(--bg-panel);
+    }
+
+    .update-date {
+      flex-shrink: 0;
+      font-size: 12px;
+      color: var(--text-muted);
+      min-width: 80px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .update-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .update-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .update-summary {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* 分类入口 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 10px;
+    }
+
+    .category-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-btn);
+      padding: 14px 12px;
+      text-align: center;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+      cursor: pointer;
+      display: block;
+      color: var(--text-primary);
+      font-size: 13.5px;
+      font-weight: 600;
+    }
+
+    .category-item:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .category-item:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
+
+    .category-item .cat-count {
+      display: block;
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 400;
+      margin-top: 3px;
+    }
+
+    /* 深度解析 */
+    .deep-dive {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 26px 28px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-card);
+      font-size: 14.5px;
+      line-height: 1.85;
+      color: var(--text-secondary);
+    }
+
+    .deep-dive h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 22px 0 10px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--primary-light);
+    }
+
+    .deep-dive h3:first-child {
+      margin-top: 0;
+    }
+
+    .deep-dive p {
+      margin-bottom: 12px;
+    }
+
+    .deep-dive ul,
+    .deep-dive ol {
+      padding-left: 22px;
+      margin-bottom: 14px;
+    }
+
+    .deep-dive li {
+      margin-bottom: 6px;
+    }
+
+    .deep-dive strong {
+      color: var(--text-primary);
+    }
+
+    .deep-dive blockquote {
+      background: var(--bg-panel);
+      border-left: 4px solid var(--accent);
+      padding: 12px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 14px 0;
+      font-size: 13.5px;
+      color: var(--text-secondary);
+    }
+
+    /* 体验指南 */
+    .guide-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+
+    .guide-step {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 18px 16px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+
+    .guide-step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .guide-step h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .guide-step p {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border-radius: var(--radius-btn);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 14px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      transition: background 0.2s;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: '+';
+      font-size: 20px;
+      color: var(--primary);
+      font-weight: 400;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+
+    .faq-item[open] summary::after {
+      content: '−';
+    }
+
+    .faq-item summary:hover {
+      background: var(--bg-panel);
+    }
+
+    .faq-item summary:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: -2px;
+    }
+
+    .faq-answer {
+      padding: 0 18px 16px;
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* 用户评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+    }
+
+    .comment-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      padding: 14px 16px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-card);
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-secondary);
+    }
+
+    .comment-user {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .comment-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--primary-dark);
+      flex-shrink: 0;
+    }
+
+    .comment-name {
+      font-weight: 600;
+      font-size: 12.5px;
+      color: var(--text-primary);
+    }
+
+    .comment-time {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-left: auto;
+    }
+
+    /* 资讯列表 */
+    .news-list {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+
+    .news-item {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--divider-color);
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    .news-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+
+    .news-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .news-summary {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* 相关推荐 */
+    .recommend-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .recommend-tags a {
+      display: inline-block;
+      padding: 8px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-tag);
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .recommend-tags a:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary-dark);
+      text-decoration: none;
+    }
+
+    /* 补充板块 - 时间线 */
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+      border-left: 2px solid var(--primary-light);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 18px;
+      padding-left: 10px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -31px;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg-card);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+
+    .timeline-date {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .timeline-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 2px 0;
+    }
+
+    .timeline-desc {
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    /* 右辅助栏 */
+    .right-sidebar {
+      position: sticky;
+      top: calc(var(--sticky-offset) + 20px);
+      max-height: calc(100vh - var(--sticky-offset) - 40px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .side-panel {
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-card);
+      padding: 16px;
+    }
+
+    .side-panel h3 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--divider-color);
+      letter-spacing: 0.3px;
+    }
+
+    .hot-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .hot-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+
+    .hot-list .rank {
+      font-weight: 700;
+      color: var(--text-muted);
+      font-size: 11px;
+      min-width: 16px;
+    }
+
+    .hot-list li:nth-child(1) .rank { color: #d94a4a; }
+    .hot-list li:nth-child(2) .rank { color: #e08a3a; }
+    .hot-list li:nth-child(3) .rank { color: #d9a441; }
+
+    .hot-list a {
+      color: var(--text-secondary);
+      font-size: 12.5px;
+    }
+
+    .hot-list a:hover {
+      color: var(--primary-dark);
+    }
+
+    .side-panel .update-mini {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .side-panel .update-mini span {
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* 互动板块 */
+    .interact-panel {
+      background: linear-gradient(135deg, var(--primary-light) 0%, #f8fbf6 100%);
+      border-radius: var(--radius-card);
+      padding: 20px 22px;
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px;
+      justify-content: space-between;
+    }
+
+    .interact-panel p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .interact-btn {
+      display: inline-block;
+      padding: 10px 24px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      transition: background 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+
+    .interact-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    /* 搜索无结果提示 */
+    .search-empty {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+      font-size: 14px;
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      border: 1px dashed var(--border-color);
+    }
+
+    .search-empty.visible {
+      display: block;
+    }
+
+    /* 页脚 */
+    .site-footer {
+      background: var(--primary-dark);
+      color: #c4d8c0;
+      padding: 40px 20px 24px;
+      margin-top: 20px;
+    }
+
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-brand .brand-name {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .footer-brand .brand-desc {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #a0b89a;
+      max-width: 360px;
+    }
+
+    .footer-col h4 {
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 12.5px;
+      color: #a0b89a;
+      padding: 3px 0;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      max-width: 1360px;
+      margin: 24px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #7a9a74;
+    }
+
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 24px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s, transform 0.25s;
+      z-index: 90;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-to-top:hover {
+      transform: translateY(-3px);
+    }
+
+    .back-to-top:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .main-container {
+        grid-template-columns: 160px 1fr;
+      }
+
+      .right-sidebar {
+        display: none;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .hero-visual svg {
+        max-width: 220px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .header-search input {
+        width: 120px;
+      }
+
+      .header-search input:focus {
+        width: 150px;
+      }
+    }
+
+    @media (max-width: 740px) {
+      :root {
+        --announce-h: auto;
+        --header-h: 56px;
+      }
+
+      .announce-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 16px;
+        height: auto;
+        gap: 4px;
+      }
+
+      .announce-items {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .site-header {
+        top: 0;
+        padding: 0 12px;
+      }
+
+      .header-nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .header-search {
+        margin-left: auto;
+      }
+
+      .header-search input {
+        width: 100px;
+      }
+
+      .header-search input:focus {
+        width: 120px;
+      }
+
+      .main-container {
+        grid-template-columns: 1fr;
+        padding: 20px 14px 32px;
+      }
+
+      .left-sidebar {
+        display: none;
+      }
+
+      .hero-section {
+        padding: 32px 16px 36px;
+      }
+
+      .hero-text h1 {
+        font-size: 24px;
+      }
+
+      .hero-desc {
+        font-size: 14px;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .category-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      }
+
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .update-item {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .update-date {
+        min-width: unset;
+      }
+
+      .guide-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .deep-dive {
+        padding: 18px 16px;
+      }
+
+      .overview-text {
+        padding: 16px;
+      }
+
+      .back-to-top {
+        bottom: 18px;
+        right: 14px;
+        width: 38px;
+        height: 38px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar" role="banner" aria-label="更新公告">
+    <span class="announce-brand">我的世界珍妮原版动画完整版</span>
+    <div class="announce-items">
+      <span><span class="dot"></span><span class="announce-date">11月7日</span> 新增《珍妮与末影龙》第3集配音花絮</span>
+      <span><span class="dot"></span><span class="announce-date">11月5日</span> 第12集「黑森林的抉择」4K修复版上线</span>
+      <span><span class="dot"></span><span class="announce-date">11月3日</span> 珍妮角色设定集新增8张场景概念图</span>
+    </div>
+  </div>
+
+  <!-- 吸顶页头 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-area">
+        <svg class="logo-svg" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="2" y="2" width="36" height="36" rx="8" fill="#2e6b3e"/>
+          <circle cx="20" cy="16" r="7" fill="#f5d742"/>
+          <rect x="10" y="25" width="20" height="6" rx="3" fill="#e0e0e0"/>
+          <circle cx="14" cy="14" r="2" fill="#2e6b3e"/>
+          <circle cx="26" cy="14" r="2" fill="#2e6b3e"/>
+          <path d="M15 19 Q20 24 25 19" stroke="#2e6b3e" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="brand-text">我的世界珍妮原版动画完整版</span>
+      </div>
+      <nav class="header-nav" aria-label="主题导航">
+        <a href="/#overview">动画概览</a>
+        <a href="/#featured">精选推荐</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#guide">观看指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#timeline">版本时间线</a>
+        <a href="/#interact">投稿互动</a>
+      </nav>
+      <div class="header-search">
+        <input type="search" id="searchInput" placeholder="搜索条目…" aria-label="搜索站内条目">
+        <button type="button" id="searchBtn" aria-label="执行搜索">搜索</button>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- 移动端遮罩与抽屉 -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-label="移动端导航菜单">
+    <button class="close-btn" id="drawerCloseBtn" aria-label="关闭菜单">×</button>
+    <nav>
+      <a href="/#overview">动画概览</a>
+      <a href="/#featured">精选推荐</a>
+      <a href="/#updates">最新更新</a>
+      <a href="/#categories">分类入口</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#guide">观看指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">用户评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#recommend">相关推荐</a>
+      <a href="/#timeline">版本时间线</a>
+      <a href="/#interact">投稿互动</a>
+    </nav>
+  </div>
+
+  <!-- 首屏 -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>我的世界珍妮原版动画完整版</h1>
+        <p class="hero-desc">汇集珍妮系列Minecraft动画的全剧集索引、角色设定档案、配音幕后与逐集解读。从第1集「初入方块世界」到第12集「黑森林的抉择」，覆盖主线剧情、衍生短片与粉丝二创精选，适合想按顺序补完或查阅细节的观众。</p>
+        <div class="hero-actions">
+          <a href="/#featured" class="btn-primary">浏览全剧集</a>
+          <a href="/#guide" class="btn-outline">观看顺序指南</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="60" width="120" height="120" rx="12" fill="#4a8a5a" opacity="0.6"/>
+          <rect x="60" y="30" width="160" height="160" rx="16" fill="#2e6b3e" opacity="0.8"/>
+          <circle cx="140" cy="95" r="32" fill="#f5d742"/>
+          <rect x="100" y="140" width="80" height="20" rx="10" fill="#e0e0e0"/>
+          <circle cx="128" cy="90" r="6" fill="#2e6b3e"/>
+          <circle cx="152" cy="90" r="6" fill="#2e6b3e"/>
+          <path d="M128 108 Q140 120 152 108" stroke="#2e6b3e" stroke-width="3" stroke-linecap="round" fill="none"/>
+          <rect x="180" y="170" width="90" height="70" rx="10" fill="#d9a441" opacity="0.5"/>
+          <rect x="200" y="185" width="50" height="6" rx="3" fill="#fff" opacity="0.5"/>
+          <rect x="200" y="198" width="40" height="6" rx="3" fill="#fff" opacity="0.35"/>
+          <rect x="200" y="211" width="30" height="6" rx="3" fill="#fff" opacity="0.25"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主容器：三栏门户 -->
+  <div class="main-container">
+
+    <!-- 左频道索引 -->
+    <aside class="left-sidebar" aria-label="频道索引">
+      <nav class="channel-nav" aria-label="内容频道">
+        <h2>频道索引</h2>
+        <a href="/#overview" class="active">动画概览</a>
+        <a href="/#featured">精选推荐</a>
+        <a href="/#updates">最新更新</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#guide">观看指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#recommend">相关推荐</a>
+        <a href="/#timeline">版本时间线</a>
+        <a href="/#interact">投稿互动</a>
+      </nav>
+    </aside>
+
+    <!-- 主内容区 -->
+    <main class="content-area">
+
+      <!-- 主题领域概览 -->
+      <section class="content-section" id="overview">
+        <div class="section-header">
+          <h2><span class="accent-dot"></span>珍妮系列动画的世界观与内容版图</h2>
+        </div>
+        <div class="overview-text">
+          <p>珍妮系列动画诞生于Minecraft同人创作的活跃期，以方块世界为舞台，围绕主角珍妮的冒险展开叙事。原版动画共12集主线剧集，每集约8至14分钟，采用游戏内录制加后期渲染的制作流程。剧情从珍妮在平原生物群系醒来开始，逐步引入村庄守卫、末影龙讨伐、黑森林探险等经典Minecraft元素，同时穿插原创角色如铁傀儡管家「老铁」和流浪商人「阿金」的支线故事。</p>
+          <p>值得关注的内容方向包括：主线剧情逐集解析（第7集「下界迷途」的叙事结构常被讨论）、角色关系图谱（珍妮与老铁的互动是二创热点）、配音幕后（第3集的末影龙配音由社区成员「方块声工坊」完成）、以及4K修复版的画面升级对比。衍生短片《珍妮的农场日常》共6集，侧重轻松向的生存日常，与主线形成节奏互补。</p>
+          <p>2026年10月下旬至11月初，系列更新集中在修复版上线和设定集补充。第12集「黑森林的抉择」于11月5日发布4K修复版，画面分辨率从1080p提升至2160p，同时修正了原版第9分12秒处铁傀儡手臂穿模的问题。珍妮角色设定集在11月3日新增8张场景概念图，涵盖黑森林遗迹和末地传送门房间的设计手稿。</p>
+        </div>
+      </section>
+
+      <!-- 精选内容推荐 -->
+      <section class="content-section" id="featured">
+        <div class="section-header">
+          <h2><span class="accent-dot"></span>精选剧集与衍生内容</h2>
+          <a href="/#updates" class="more-link">查看更新记录 →</a>
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <img class="card-img" src="https://picsum.photos/seed/jenny-ep1/400/300" width="400" height="300" loading="lazy" alt="珍妮第1集初入方块世界的平原场景">
+            <div class="card-body">
+              <span class="card-type">主线剧集</span>
+              <div class="card-title">第1集「初入方块世界」</div>
+              <div class="card-desc">珍妮在平原醒来，徒手撸树建起第一个工作台。开场3分钟无对白，全靠环境音效和方块破坏声建立世界观。</div>
+              <div class="card-tags"><span>生存开局</span><span>无对白段落</span><span>平原群系</span></div>
+              <div class="card-meta"><span class="hot-score">热度 9.2</span><span>播放 86.4万</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img" src="https://picsum.photos/seed/jenny-ep3/400/300" width="400" height="300" loading="lazy" alt="珍妮与末影龙对峙的末地场景">
+            <div class="card-body">
+              <span class="card-type">主线剧集</span>
+              <div class="card-title">第3集「末影龙之影」</div>
+              <div class="card-desc">末影龙首次登场，配音由方块声工坊制作，龙吼用了三层音轨叠加。本集结尾珍妮被击落虚空，留下悬念。</div>
+              <div class="card-tags"><span>末地</span><span>BOSS战</span><span>配音花絮</span></div>
+              <div class="card-meta"><span class="hot-score">热度 9.5</span><span>播放 112.7万</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img" src="https://picsum.photos/seed/jenny-ep7/400/300" width="400" height="300" loading="lazy" alt="下界要塞的走廊与岩浆湖">
+            <div class="card-body">
+              <span class="card-type">主线剧集</span>
+              <div class="card-title">第7集「下界迷途」</div>
+              <div class="card-desc">珍妮误入下界要塞，在岩浆湖上方搭建临时通道。本集采用双线剪辑，现实线找路、回忆线补完珍妮身世。</div>
+              <div class="card-tags"><span>下界要塞</span><span>双线叙事</span><span>身世伏笔</span></div>
+              <div class="card-meta"><span class="hot-score">热度 9.0</span><span>播放 78.3万</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img" src="https://picsum.photos/seed/jenny-ep12/400/300" width="400" height="300" loading="lazy" alt="黑森林古宅与珍妮的抉择场景">
+            <div class="card-body">
+              <span class="card-type">主线剧集</span>
+              <div class="card-title">第12集「黑森林的抉择」</div>
+              <div class="card-desc">季终集，珍妮在古宅发现村民失踪线索，选择救人或取宝。4K修复版11月5日上线，画面细节提升明显。</div>
+              <div class="card-tags"><span>黑森林</span><span>季终</span><span>4K修复</span></div>
+              <div class="card-meta"><span class="hot-score">热度 9.7</span><span>播放 134.2万</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img" src="https://picsum.photos/seed/jenny-farm/400/300" width="400" height="300" loading="lazy" alt="珍妮的农场日常中的麦田与鸡舍">
+            <div class="card-body">
+              <span class="card-type">衍生短片</span>
+              <div class="card-title">《珍妮的农场日常》第4集</div>
+              <div class="card-desc">珍妮教老铁种胡萝卜，结果铁傀儡把种子全踩了。6分钟纯日常，弹幕都在刷“老铁你故意的吧”。</div>
+              <div class="card-tags"><span>日常向</span><span>铁傀儡</span><span>农场</span></div>
+              <div class="card-meta"><span class="hot-score">热度 8.6</span><span>播放 45.1万</span></div>
+            </div>
+          </div>
+          <div class="card">
+            <img class="card-img" src="https://picsum.photos/seed/jenny-concept/400/300" width="400" height="300" loading="lazy" alt="珍妮角色设定集中的末地传送门概念图">
+            <div class="card-body">
+              <span class="card-type">设定集</span>
+              <div class="card-title">珍妮角色设定集·场景篇</div>
+              <div class="card-desc">11月3日更新8张概念图，包含黑森林遗迹剖面和末地传送门房间的三种配色方案，附创作者批注。</div>
+              <div class="card-tags"><span>概念图</span><span>场景设计</span><span>创作者批注</span></div>
+              <div class="card-meta"><span class="hot-score">收藏 2.3万</span><span>更新 11-03</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="content-section" id="updates">
+        <div class="section-header">
+          <h2><span class="accent-dot"></span>最新更新与动态</h2>
+        </div>
+        <div class="update-list">
+          <div class="update-item">
+            <span class="update-date">2026-11-07</span>
+            <div class="update-body">
+              <div class="update-title">《珍妮与末影龙》第3集配音花絮公开</div>
+              <div class="update-summary">方块声工坊发布6分钟幕后视频，展示末影龙吼声的三层音轨叠加过程，包括低频震动和金属摩擦声的合成参数。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-date">2026-11-05</span>
+            <div class="update-body">
+              <div class="update-title">第12集「黑森林的抉择」4K修复版上线</div>
+              <div class="update-summary">分辨率从1080p提升至2160p，修正原版9分12秒铁傀儡手臂穿模问题，黑森林树叶材质替换为带次表面散射的新贴图。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-date">2026-11-03</span>
+            <div class="update-body">
+              <div class="update-title">珍妮角色设定集新增8张场景概念图</div>
+              <div class="update-summary">涵盖黑森林遗迹剖面、末地传送门房间三种配色方案，每张附创作者批注，标注了灵感来源和废弃备选方案。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-date">2026-10-30</span>
+            <div class="update-body">
+              <div class="update-title">第9集「村庄守卫战」导演评论音轨发布</div>
+              <div class="update-summary">导演「绿洲工作室」在音轨中解释村庄攻防战的镜头调度，提到铁傀儡出场镜头拍了17条才过。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-date">2026-10-28</span>
+            <div class="update-body">
+              <div class="update-title">衍生短片《珍妮的农场日常》第6集完结</div>
+              <div class="update-summary">最终集以珍妮和老铁一起看日落收尾，片尾彩蛋出现流浪商人阿金的摊位，暗示与主线第11集的关联。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-date">2026-10-25</span>
+            <div class="update-body">
+              <div class="update-title">粉丝二创合集「珍妮的100种死法」播放破50万</div>
+              <div class="update-summary">UP主「苦力怕不苦」制作的搞笑混剪，收录珍妮在正片中的各种意外死亡镜头，第3集坠入虚空片段出现频次最高。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-date">2026-10-22</span>
+            <div class="update-body">
+              <div class="update-title">第5集「矿洞回声」4K修复版提前预览</div>
+              <div class="update-summary">官方发布30秒对比片段，展示矿洞光照从烘焙贴图改为实时光追后的效果差异，完整版预计11月中旬上线。</div>
+            </div>
+          </div>
+          <div class="update-item">
+            <span class="update-date">2026-10-20</span>
+            <div class="update-body">
+              <div class="update-title">珍妮声优「小方块」发布Q&A视频</div>
+              <div class="update-summary">回答粉丝提问，提到第8集那句“我还能再挖十个矿”是即兴发挥，原台词只有“继续挖矿”四个字。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="content-section" id="categories">
+        <div class="section-header">
+          <h2><span class="accent-dot"></span>按内容类型浏览</h2>
+        </div>
+        <div class="category-grid" id="categoryGrid">
+          <a href="/#featured" class="category-item" data-category="主线剧集">主线剧集<span class="cat-count">12集</span></a>
+          <a href="/#featured" class="category-item" data-category="衍生短片">衍生短片<span class="cat-count">6集</span></a>
+          <a href="/#featured" class="category-item" data-category="角色设定">角色设定<span class="cat-count">24张</span></a>
+          <a href="/#updates" class="category-item" data-category="配音幕后">配音幕后<span class="cat-count">8条</span></a>
+          <a href="/#deep-dive" class="category-item" data-category="逐集解析">逐集解析<span class="cat-count">12篇</span></a>
+          <a href="/#news" class="category-item" data-category="修复版对比">修复版对比<span class="cat-count">5组</span></a>
+          <a href="/#comments" class="category-item" data-category="二创精选">二创精选<span class="cat-count">37个</span></a>
+          <a href="/#timeline" class="category-item" data-category="版本时间线">版本时间线<span class="cat-count">18条</span></a>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="content-section" id="deep-dive">
+        <div class="section-header">
+          <h2><span class="accent-dot"></span>珍妮系列叙事结构与制作差异解析</h2>
+        </div>
+        <div class="deep-dive">
+          <h3>主线与衍生短片的节奏差异</h3>
+          <p>主线12集采用“危机—探索—反转”的单集结构，每集至少安排一个Minecraft机制相关的关卡设计。以第7集「下界迷途」为例，珍妮在要塞中搭建临时通道的8分钟段落，剪辑点密度为每12秒一次，而衍生短片《农场日常》同一时长的剪辑点只有4次，大量使用固定机位长镜头。两种节奏对应不同观看场景：主线适合连续追看，短片段落适合碎片时间。</p>
+          <p>第3集「末影龙之影」的BOSS战分镜值得单独拆解。从珍妮进入末地到龙首次俯冲，总共用了47秒做氛围铺垫，包括末地石砖的脚步声、背景音乐中隐约的龙息低频、以及三次天空变暗的预警镜头。对比第12集黑森林古宅的进入段落，铺垫缩短到19秒，制作组在季终集明显加快了叙事速度。</p>
+
+          <h3>4K修复版的实际画面变化</h3>
+          <p>11月5日上线的第12集4K修复版，画面改动集中在三处可核对的细节：</p>
+          <ul>
+            <li><strong>分辨率与材质：</strong>从1920×1080提升至3840×2160，黑森林树叶的alpha通道边缘锯齿减少约70%，树皮纹理新增了法线贴图。</li>
+            <li><strong>穿模修复：</strong>原版9分12秒铁傀儡右手小臂与门框交叉的穿模问题得到修正，修复后手臂与门框间距约2像素。</li>
+            <li><strong>光照调整：</strong>古宅内部从均匀亮度改为窗口光加烛光的两级照明，珍妮脸部的阴影过渡更自然，但部分观众在评论区提到「暗处细节反而看不清了」。</li>
+          </ul>
+          <p>修复版不是简单拉伸分辨率。制作组「绿洲工作室」在10月22日的预览片段中说明，第5集矿洞场景将从烘焙光照改为实时光追，这会导致显卡负载上升，移动端观看可能自动降级为1080p。</p>
+
+          <h3>角色配音的层次构成</h3>
+          <p>珍妮的声线由社区配音者「小方块」负责，音色偏中低，语速较快。第8集「矿洞回声」中那句“我还能再挖十个矿”是即兴发挥，原剧本只有“继续挖矿”四个字，导演保留了即兴版本，因为“十个矿”的夸张说法更贴合珍妮莽撞的性格设定。</p>
+          <p>末影龙的吼声由方块声工坊制作，用了三层音轨叠加：底层是低频震动（约40Hz），中层是金属摩擦采样，顶层是反向播放的鲸鱼叫声。三层音轨的比例为5:3:2，在第3集结尾的龙吼中能明显听到金属摩擦声的突起。</p>
+          <blockquote>判断一段动画配音是否用心，可以听环境音是否随镜头变化。珍妮在平原行走时有草叶摩擦声，进入矿洞后切换为脚步声加滴水回响，这类细节在12集中出现了至少23处。</blockquote>
+
+          <h3>观看顺序的两条路径</h3>
+          <p>按播出顺序看，第1集到第12集是标准路径，适合第一次接触的观众。按时间线看，衍生短片《农场日常》的6集可以穿插在主线第4集到第9集之间，因为短片中出现的流浪商人阿金，在主线第11集才正式登场，先看短片能更早理解阿金与珍妮的交易关系。</p>
+          <p>两条路径的差异集中在第7集到第9集：播出顺序中，第7集下界迷途的回忆线埋了珍妮身世的伏笔，第9集村庄守卫战才回收；时间线顺序则建议先看第8集矿洞回声，因为矿洞中珍妮捡到的那块带刻字的石头，在时间线上是第7集之前的事件。制作组在10月30日的导演评论音轨中确认，第8集的石头确实属于前传性质的道具，但正片没有明确点破。</p>
+        </div>
+      </section>
+
+      <!-- 体验指南 -->
+      <section class="content-section" id="guide">
+        <div class="section-header">
+          <h2><span class="accent-dot"></span>补番顺序与条目判断依据</h2>
+        </div>
+        <div class="guide-steps">
+          <div class="guide-step">
+            <div class="guide-step-num">1</div>
+            <h3>先看第1集判断画风接受度</h3>
+            <p>第1集开场3分钟无对白，全是方块环境音。如果这段看不下去，后面12集的叙事节奏大概率也不合口味。</p>
+          </div>
+          <div class="guide-step">
+            <div class="guide-step-num">2</div>
+            <h3>按播出顺序补主线</h3>
+            <p>第1集到第12集依次看，第3集末影龙战和第7集下界迷途是整个系列的叙事高点，不建议跳集。</p>
+          </div>
+          <div class="guide-step">
+            <div class="guide-step-num">3</div>
+            <h3>用短片调节节奏</h3>
+            <p>主线看到第6集后，穿插《农场日常》第1到3集。短片单集6分钟，适合午休或通勤时看，不影响主线悬念。</p>
+          </div>
+          <div class="guide-step">
+            <div class="guide-step-num">4</div>
+            <h3>二刷再看修复版对比</h3>
+            <p>第12集4K修复版值得二刷，重点看9分12秒的穿模修复和古宅光照变化。首次观看建议先看原版，修复版放二刷。</p>
+          </div>
+          <div class="guide-step">
+            <div class="guide-step-num">5</div>
+            <h3>判断条目的三个硬指标</h3>
+            <p>看单集时长是否超过8分钟、是否有至少一处Minecraft机制相关的情节推进、配音是否覆盖环境音变化。三项齐备的集数质量最稳。</p>
+          </div>
+          <div class="guide-step">
+            <div class="guide-step-num">6</div>
+            <h3>相似条目比较方法</h3>
+            <p>同类型Minecraft动画对比时，看对方是否处理了方块破坏后的掉落物动画、生物群系切换时的背景音乐过渡，这两项是制作精度的分水岭。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="content-section" id="faq">
+        <div class="section-header">
+          <h2><span class="accent-dot"></span>关于珍妮动画的常见问题</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>珍妮原版动画一共多少集？</summary>
+            <div class="faq-answer">主线剧集共12集，每集8到14分钟。衍生短片《珍妮的农场日常》另有6集。此外还有3条导演评论音轨和8条配音花絮，不算在正片集数内。</div>
+          </details>
+          <details class="faq-item">
+            <summary>第12集4K修复版和原版有什么区别？</summary>
+            <div class="faq-answer">分辨率从1080p提升到2160p，修正了原版9分12秒处铁傀儡手臂穿模问题，黑森林树叶材质替换为带次表面散射的新贴图，古宅内部光照改为窗口光加烛光的两级照明。部分观众反馈暗处细节反而变暗了。</div>
+          </details>
+          <details class="faq-item">
+            <summary>末影龙的配音是怎么做出来的？</summary>
+            <div class="faq-answer">方块声工坊用了三层音轨叠加：底层低频震动约40Hz，中层金属摩擦采样，顶层是反向播放的鲸鱼叫声。三层比例5:3:2，第3集结尾的龙吼中金属摩擦声最明显。</div>
+          </details>
+          <details class="faq-item">
+            <summary>衍生短片和主线剧情有先后关系吗？</summary>
+            <div class="faq-answer">短片第6集片尾出现的流浪商人阿金，在主线第11集才正式登场。先看短片能更早理解阿金和珍妮的交易关系，但不影响主线剧情的理解。制作组确认短片属于平行时间线。</div>
+          </details>
+          <details class="faq-item">
+            <summary>第7集「下界迷途」的回忆线讲了什么？</summary>
+            <div class="faq-answer">回忆线补完珍妮在村庄被袭击前的经历，包括她第一次遇到老铁的场景。第8集矿洞中捡到的带刻字石头，在时间线上属于这段回忆的后续，但正片没有明说，导演在评论音轨中才确认。</div>
+          </details>
+          <details class="faq-item">
+            <summary>珍妮的声优是谁？配音有什么特点？</summary>
+            <div class="faq-answer">声优是社区配音者「小方块」，音色偏中低、语速较快。第8集那句“我还能再挖十个矿”是即兴发挥，原剧本只有“继续挖矿”四个字，导演觉得即兴版本更贴合珍妮莽撞的性格，所以保留了。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 用户评论 -->
+      <section class="content-section" id="comments">
+        <div class="section-header">
+          <h2><span class="accent-dot"></span>观众评论与讨论</h2>
+        </div>
+        <div class="comment-grid">
+          <div class="comment-card">
+            <div class="comment-user">
+              <span class="comment-avatar">挖</span>
+              <span class="comment-name">挖矿不挖煤</span>
+              <span class="comment-time">11-07</span>
+            </div>
+            <p>第3集末影龙吼声真的绝了，戴耳机听低频震得我桌子都在抖。方块声工坊那三层音轨的活确实细。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-user">
+              <span class="comment-avatar">苦</span>
+              <span class="comment-name">苦力怕不苦</span>
+              <span class="comment-time">11-07</span>
+            </div>
+            <p>4K修复版暗处确实更暗了，黑森林古宅二楼的书架细节基本看不见。不过铁傀儡穿模修好了，好评。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-user">
+              <span class="comment-avatar">老</span>
+              <span class="comment-name">老铁踩种子</span>
+              <span class="comment-time">11-06</span>
+            </div>
+            <p>农场日常第4集老铁把胡萝卜种子全踩了那段，我看了三遍。铁傀儡这种笨拙感做得太真实了。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-user">
+              <span class="comment-avatar">阿</span>
+              <span class="comment-name">阿金的小摊</span>
+              <span class="comment-time">11-06</span>
+            </div>
+            <p>先看了短片再回去看主线第11集，阿金出场的时候我直接笑出声，这商人从短片到正片就没靠谱过。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-user">
+              <span class="comment-avatar">末</span>
+              <span class="comment-name">末地不睡觉</span>
+              <span class="comment-time">11-05</span>
+            </div>
+            <p>第7集双线剪辑有点乱，现实线找路和回忆线来回跳，第一次看没分清哪边是现在哪边是过去。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-user">
+              <span class="comment-avatar">平</span>
+              <span class="comment-name">平原第一棵树</span>
+              <span class="comment-time">11-05</span>
+            </div>
+            <p>第1集开头三分钟无对白那段，我当初差点弃了。后来坚持看到第3集才真香。建议新观众至少看到第3集再决定。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-user">
+              <span class="comment-avatar">绿</span>
+              <span class="comment-name">绿洲打工人</span>
+              <span class="comment-time">11-04</span>
+            </div>
+            <p>导演评论音轨说铁傀儡出场拍了17条，我回头看了第9集，确实能看出铁傀儡走路姿态调整过好几个版本。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-user">
+              <span class="comment-avatar">石</span>
+              <span class="comment-name">石头剪刀布</span>
+              <span class="comment-time">11-04</span>
+            </div>
+            <p>第8集那句“我还能再挖十个矿”居然是即兴的？小方块这临场发挥可以啊，比原台词有记忆点多了。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-user">
+              <span class="comment-avatar">岩</span>
+              <span class="comment-name">岩浆湖钓鱼</span>
+              <span class="comment-time">11-03</span>
+            </div>
+            <p>设定集新加的末地传送门房间三种配色方案，我站第二种紫黑配色。第一种太亮了，不像末地。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-user">
+              <span class="comment-avatar">今</span>
+              <span class="comment-name">今天不挖矿</span>
+              <span class="comment-time">11-03</span>
+            </div>
+            <p>说实话对农场日常这种日常向不太感冒，还是主线打末影龙带劲。不过短片下饭确实合适。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-user">
+              <span class="comment-avatar">音</span>
+              <span class="comment-name">音轨收藏家</span>
+              <span class="comment-time">11-02</span>
+            </div>
+            <p>环境音细节确实多。珍妮进矿洞后脚步声有滴水回响，出矿洞就没了，这处理很用心。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-user">
+              <span class="comment-avatar">回</span>
+              <span class="comment-name">回忆线太绕</span>
+              <span class="comment-time">11-01</span>
+            </div>
+            <p>第7集回忆线补身世是好，但能不能在画面上加个时间戳？来回跳真的容易晕。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-user">
+              <span class="comment-avatar">二</span>
+              <span class="comment-name">二创爱好者</span>
+              <span class="comment-time">10-31</span>
+            </div>
+            <p>「珍妮的100种死法」那个混剪笑死我了，第3集坠虚空那个镜头被做成了鬼畜循环。</p>
+          </div>
+          <div class="comment-card">
+            <div class="comment-user">
+              <span class="comment-avatar">修</span>
+              <span class="comment-name">修复版观察员</span>
+              <span class="comment-time">10-30</span>
+            </div>
+            <p>第5集矿洞要改光追了，我显卡估计扛不住4K。希望移动端自动降级别太狠。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="content-section" id="news">
+        <div class="section-header">
+          <h2><span class="accent-dot"></span>珍妮系列相关资讯</h2>
+        </div>
+        <div class="news-list">
+          <div class="news-item">
+            <div class="news-title">第12集4K修复版上线首日播放量突破28万</div>
+            <div class="news-meta">2026-11-06 · 来源：绿洲工作室公告</div>
+            <div class="news-summary">相比原版第12集首日播放19.6万，修复版增长约43%。评论区讨论集中在穿模修复和暗处细节两个方向。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">方块声工坊公开末影龙配音工程文件</div>
+            <div class="news-meta">2026-11-05 · 来源：方块声工坊B站动态</div>
+            <div class="news-summary">工程文件包含三层音轨的原始采样和合成参数，其中金属摩擦声源来自一段废弃铁轨的现场录音，时长47秒。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">珍妮设定集场景篇新增8张概念图</div>
+            <div class="news-meta">2026-11-03 · 来源：珍妮系列官方设定集</div>
+            <div class="news-summary">黑森林遗迹剖面图标注了3处废弃备选结构，末地传送门房间的三种配色方案中紫黑方案获得最多投票。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">第9集导演评论音轨披露铁傀儡出场拍摄17条</div>
+            <div class="news-meta">2026-10-30 · 来源：绿洲工作室音频节目</div>
+            <div class="news-summary">导演在音轨中提到，铁傀儡走路姿态调整了三个版本，最终采用的是“腿部略拖沓”的笨拙感版本。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">衍生短片《农场日常》第6集片尾彩蛋关联主线第11集</div>
+            <div class="news-meta">2026-10-28 · 来源：粉丝解析帖</div>
+            <div class="news-summary">彩蛋中流浪商人阿金的摊位招牌上写着“下界特产”，与主线第11集阿金向珍妮推销下界石英的台词呼应。</div>
+          </div>
+          <div class="news-item">
+            <div class="news-title">第5集矿洞场景光追版30秒对比片段放出</div>
+            <div class="news-meta">2026-10-22 · 来源：绿洲工作室预览</div>
+            <div class="news-summary">对比片段显示矿洞光照从烘焙贴图改为实时光追后，火把光晕在岩壁上的衰减更自然，但移动端可能自动降级为1080p。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="content-section" id="recommend">
+        <div class="section-header">
+          <h2><span class="accent-dot"></span>你可能还想看</h2>
+        </div>
+        <div class="recommend-tags">
+          <a href="/#featured">第7集下界迷途双线叙事解析</a>
+          <a href="/#deep-dive">4K修复版光照调整对比</a>
+          <a href="/#updates">第5集矿洞光追版预览</a>
+          <a href="/#featured">《农场日常》第4集老铁踩种子</a>
+          <a href="/#timeline">珍妮身世伏笔时间线</a>
+          <a href="/#comments">末影龙配音三层音轨拆解</a>
+          <a href="/#news">第12集修复版播放数据</a>
+          <a href="/#deep-dive">配音环境音细节清单</a>
+        </div>
+      </section>
+
+      <!-- 补充板块：版本时间线 -->
+      <section class="content-section" id="timeline">
+        <div class="section-header">
+          <h2><span class="accent-dot"></span>珍妮系列版本与事件时间线</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2026-11-07</div>
+            <div class="timeline-title">第3集配音花絮公开</div>
+            <div class="timeline-desc">方块声工坊发布末影龙吼声合成过程，工程文件同步公开。</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2026-11-05</div>
+            <div class="timeline-title">第12集4K修复版上线</div>
+            <div class="timeline-desc">穿模修复加材质升级，首日播放28万。</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2026-11-03</div>
+            <div class="timeline-title">设定集场景篇更新</div>
+            <div class="timeline-desc">新增8张概念图，含黑森林遗迹和末地传送门房间。</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2026-10-30</div>
+            <div class="timeline-title">第9集导演评论音轨发布</div>
+            <div class="timeline-desc">披露铁傀儡出场拍摄17条，村庄攻防战镜头调度细节。</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2026-10-28</div>
+            <div class="timeline-title">《农场日常》第6集完结</div>
+            <div class="timeline-desc">片尾彩蛋出现阿金摊位，关联主线第11集。</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-date">2026-10-22</div>
+            <div class="timeline-title">第5集光追版预览</div>
+            <div class="timeline-desc">30秒对比片段展示矿洞光照变化，完整版预计11月中旬。</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 互动板块 -->
+      <section class="content-section" id="interact">
+        <div class="interact-panel">
+          <p>有珍妮系列的二创作品、逐集解析或配音翻唱？欢迎投稿到社区作品墙，审核通过后会出现在二创精选栏目。</p>
+          <a href="/#comments" class="interact-btn">前往投稿</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="right-sidebar" aria-label="辅助信息">
+      <div class="side-panel">
+        <h3>热门条目榜</h3>
+        <ol class="hot-list">
+          <li><span class="rank">1</span><a href="/#featured">第12集「黑森林的抉择」</a></li>
+          <li><span class="rank">2</span><a href="/#featured">第3集「末影龙之影」</a></li>
+          <li><span class="rank">3</span><a href="/#featured">第7集「下界迷途」</a></li>
+          <li><span class="rank">4</span><a href="/#featured">《农场日常》第4集</a></li>
+          <li><span class="rank">5</span><a href="/#featured">第1集「初入方块世界」</a></li>
+          <li><span class="rank">6</span><a href="/#deep-dive">4K修复版对比解析</a></li>
+        </ol>
+      </div>
+      <div class="side-panel">
+        <h3>最近更新</h3>
+        <div class="update-mini">
+          <span>11-07</span> 第3集配音花絮<br>
+          <span>11-05</span> 第12集4K修复版<br>
+          <span>11-03</span> 设定集场景篇<br>
+          <span>10-30</span> 第9集评论音轨
+        </div>
+      </div>
+      <div class="side-panel">
+        <h3>数据速览</h3>
+        <div class="update-mini">
+          主线剧集：12集<br>
+          衍生短片：6集<br>
+          概念设定图：24张<br>
+          配音花絮：8条<br>
+          修复版对比：5组
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- 搜索无结果提示 -->
+  <div class="search-empty" id="searchEmpty">没有找到匹配的条目，试试“末影龙”“第7集”或“农场日常”。</div>
+
+  <!-- 回到顶部 -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">↑</button>
+
+  <!-- 页脚 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-name">我的世界珍妮原版动画完整版</span>
+        <p class="brand-desc">覆盖珍妮系列自首播至2026年11月全部12集主线、6集衍生短片及24张角色设定图的条目索引。内容按剧集、设定、配音幕后、修复版对比四类划分，更新随官方发布同步。</p>
+      </div>
+      <div class="footer-col">
+        <h4>剧集入口</h4>
+        <a href="/#featured">主线全12集</a>
+        <a href="/#featured">衍生短片</a>
+        <a href="/#timeline">版本时间线</a>
+        <a href="/#updates">最新更新</a>
+      </div>
+      <div class="footer-col">
+        <h4>解析与指南</h4>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#guide">观看顺序</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#news">相关资讯</a>
+      </div>
+      <div class="footer-col">
+        <h4>互动</h4>
+        <a href="/#comments">用户评论</a>
+        <a href="/#interact">投稿作品</a>
+        <a href="/#recommend">相关推荐</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 珍妮系列动画内容聚合 · 示例条目与数据仅用于演示</span>
+      <span>最近更新：2026-11-07 第3集配音花絮</span>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      // 移动端菜单
+      var hamburger = document.getElementById('hamburgerBtn');
+      var drawer = document.getElementById('mobileDrawer');
+      var overlay = document.getElementById('mobileOverlay');
+      var closeBtn = document.getElementById('drawerCloseBtn');
+
+      function openDrawer() {
+        drawer.classList.add('active');
+        overlay.classList.add('active');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        drawer.classList.remove('active');
+        overlay.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', function() {
+        if (drawer.classList.contains('active')) {
+          closeDrawer();
+        } else {
+          openDrawer();
+        }
+      });
+
+      overlay.addEventListener('click', closeDrawer);
+      closeBtn.addEventListener('click', closeDrawer);
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && drawer.classList.contains('active')) {
+          closeDrawer();
+        }
+      });
+
+      // 点击抽屉内链接后自动收起
+      drawer.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          closeDrawer();
+        });
+      });
+
+      // 回到顶部
+      var backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > window.innerHeight) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 侧栏高亮当前板块
+      var sections = document.querySelectorAll('.content-section[id]');
+      var navLinks = document.querySelectorAll('.channel-nav a');
+      if (sections.length && navLinks.length) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              navLinks.forEach(function(link) {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '/#' + entry.target.id) {
+                  link.classList.add('active');
+                }
+              });
+            }
+          });
+        }, { rootMargin: '-20% 0px -70% 0px' });
+        sections.forEach(function(section) { observer.observe(section); });
+      }
+
+      // 本地搜索
+      var searchInput = document.getElementById('searchInput');
+      var searchBtn = document.getElementById('searchBtn');
+      var searchEmpty = document.getElementById('searchEmpty');
+
+      function performSearch() {
+        var query = searchInput.value.trim().toLowerCase();
+        var allSections = document.querySelectorAll('.content-section');
+        var anyMatch = false;
+
+        if (!query) {
+          allSections.forEach(function(sec) { sec.style.display = ''; });
+          searchEmpty.classList.remove('visible');
+          return;
+        }
+
+        allSections.forEach(function(sec) {
+          var text = sec.textContent.toLowerCase();
+          if (text.indexOf(query) !== -1) {
+            sec.style.display = '';
+            anyMatch = true;
+          } else {
+            sec.style.display = 'none';
+          }
+        });
+
+        if (!anyMatch) {
+          searchEmpty.classList.add('visible');
+        } else {
+          searchEmpty.classList.remove('visible');
+        }
+      }
+
+      searchBtn.addEventListener('click', performSearch);
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          performSearch();
+        }
+      });
+
+      // 分类入口筛选：点击分类后高亮对应内容（用简单筛选实现）
+      var categoryItems = document.querySelectorAll('.category-item');
+      categoryItems.forEach(function(item) {
+        item.addEventListener('click', function(e) {
+          e.preventDefault();
+          var cat = this.getAttribute('data-category');
+          var featuredSection = document.getElementById('featured');
+          if (featuredSection) {
+            featuredSection.scrollIntoView({ behavior: 'smooth' });
+            // 简单视觉提示
+            var cards = featuredSection.querySelectorAll('.card');
+            cards.forEach(function(card) {
+              var typeEl = card.querySelector('.card-type');
+              if (typeEl && typeEl.textContent.trim() === cat) {
+                card.style.outline = '2px solid #d9a441';
+                setTimeout(function() { card.style.outline = ''; }, 1600);
+              } else {
+                card.style.outline = '';
+              }
+            });
+          }
+        });
+      });
+
+    })();
+  </script>
+
+</body>
+  </html>
